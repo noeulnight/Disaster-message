@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Disaster Message</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Font Awesome -->
+    <link
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/1.0.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/1.0.0/mdb.min.js"
+    ></script>
+  </head>
+  <body class="bg-dark">
+    <div class="container"><br/>
+      <div class="alert alert-primary text-center" role="alert">
+        <strong>Hosted with <a style="color: red">♥</a> by <a style="color:greenyellow">Noeul</a>.</strong> <a href="https://github.com/noeulnight" class="alert-link" style="color:grey">GITHUB</a>
+      </div>
+      <div class="card text-left w-100 h-100 shadow text-center">
+        <div class="card-body">
+          <h4 class="card-title" style="font-weight: bold;">안전뉴스 웹뷰어</h4><a class="btn btn-primary" href="/disaster" role="button">긴급 재난문자로 이동</a>
+          <p class="card-text">
+            <% data.forEach((item, index) => { %>
+              <div class="card text-center bg-dark text-light">
+                <div class="card-body">
+                  <h4 class="card-title"><%= item.SJ.replace(/&middot;/gi, '').replace(/&quot;/gi, '') %></h4>
+                  <p class="card-text"><%= item.USR_NM.replace(/&middot;/gi, '').replace(/&quot;/gi, '') %></p>
+                </div>
+              </div><br/>
+            <%  }) %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

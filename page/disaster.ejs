@@ -27,15 +27,18 @@
   </head>
   <body class="bg-dark">
     <div class="container"><br/>
+      <div class="alert alert-primary text-center" role="alert">
+        <strong>Hosted with <a style="color: red">♥</a> by <a style="color:greenyellow">Noeul</a>.</strong> <a href="https://github.com/noeulnight" class="alert-link" style="color:grey">GITHUB</a>
+      </div>
       <div class="card text-left w-100 h-100 shadow text-center">
         <div class="card-body">
-          <h4 class="card-title" style="font-weight: bold;">긴급 재난문자 웹뷰어</h4>
+          <h4 class="card-title" style="font-weight: bold;">긴급 재난문자 웹뷰어</h4><a class="btn btn-primary" href="/news" role="button">안전뉴스로 이동</a>
           <p class="card-text">
             <% data.forEach((item, index) => { %>
               <div class="card text-center bg-dark text-light">
                 <div class="card-body">
-                  <h4 class="card-title"><%= item.SJ %></h4>
-                  <p class="card-text"><%= item.CONT %></p>
+                  <h4 class="card-title"><%= item.SJ.replace(/&middot;/gi, '').replace(/&quot;/gi, '') %></h4>
+                  <p class="card-text"><%= item.CONT.replace(/&middot;/gi, '').replace(/&quot;/gi, '') %></p>
                 </div>
               </div><br/>
             <%  }) %>
